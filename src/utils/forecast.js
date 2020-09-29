@@ -12,7 +12,7 @@ const forecast=(lat,lon,callback)=>{
         }else if(body.error){
             callback("Unable to find location",undefined)
         }else{
-            callback(undefined,"It is currently "+body.current.temp_c+" degrees out.The humidity is "+body.current.humidity)
+            callback(undefined,"It is currently "+body.current.temp_c+" degrees out.The humidity is "+body.current.humidity+" and "+body.forecast.forecastday[0].day.condition.text);
         }
     })
 }
